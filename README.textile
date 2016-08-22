@@ -2,8 +2,6 @@ h1. Related Searches
 
 h2. Generate related search queries based on query log files
 
-h3. "http://sematext.com"
-
 Related Searches is a tool dedicated to help with building related searches based on the users behavior stored in a query log files. 
 
 h2. Getting Started
