@@ -1,16 +1,10 @@
 h1. Related Searches
 
-Given a user query Related Searches returns a list of, you guessed it
-- related searches, much like related searches you see on Google
-search results pages.
+Given a user query Related Searches returns a list of, you guessed it - related searches, much like related searches you see on Google search results pages.
 
-The related searches are derived from query logs structured like the
-infamous (AOL search data
-leak∂)([https://en.wikipedia.org/wiki/AOL_search_data_leak]. See
-sample further below.
+The related searches are derived from query logs structured like the infamous AOL search data leak - https://en.wikipedia.org/wiki/AOL_search_data_leak. See sample further below.
 
-Relatedness is based on query similarity, as well as click data stored
-in the query logs.
+Relatedness is based on query similarity, as well as click data stored in the query logs.
 
 h2. Getting Started
 
