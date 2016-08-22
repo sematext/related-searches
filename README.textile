@@ -79,12 +79,12 @@ Related Searches expects a given log format out of the box, the popular "AOL":ht
 * was search successful (optional)
 
 For example:
-```
+<pre>
 12345	sematext training	Fri, 19 Aug 2016 13:30:00 GMT
 12345	sematext solr training	Fri, 19 Aug 2016 13:31:00 GMT
 56789	sematext elasticsearch	Fri, 19 Aug 2016 13:35:00 GMT	1	true	
 56789	sematext training	Fri, 19 Aug 2016 13:35:20 GMT	0	false
-```
+</pre>
 
 h1. License
 
