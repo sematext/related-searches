@@ -1,0 +1,5 @@
+Related Searches
+Copyright 2016 Sematext Group, Inc.
+
+This product includes software developed by The Apache Software
+Foundation (http://www.apache.org/).
