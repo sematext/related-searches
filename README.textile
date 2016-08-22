@@ -33,12 +33,12 @@ To run basic related searches calculation and get the result in Elasticsearch in
 @java -jar -DuseElasticSearch=true BasicRelatedSearches.jar REDIS_HOST REDIS_PORT TIME_BETWEEN_QUERIES_IN_SECONDS SUGGESTION_THRESHOLD QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD QUERY_SIMILARITY_MORE_SIMILAR QUERIES_FILE ES_HOST INDEX_NAME > /dev/null 2>&1@
 
 And the parameters are:
-* REDIS_HOST - Redis host, ie. `localhost`
-* REDIS_PORT - Redis port, ie. `6379`
-* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, ie. `20`
-* SUGGESTION_THRESHOLD - suggestion threshold, ie. `0.2`
-* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, ie. `0.9`
-* QUERY_SIMILARITY_MORE_SIMILAR - boolean, set to true will result in suggesting similar queries according to the given `QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD`
+* REDIS_HOST - Redis host, ie. _localhost_
+* REDIS_PORT - Redis port, ie. _6379_
+* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, ie. _20_
+* SUGGESTION_THRESHOLD - suggestion threshold, ie. _0.2_
+* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, ie. _0.9_
+* QUERY_SIMILARITY_MORE_SIMILAR - boolean, set to _true_ will result in suggesting similar queries according to the given _QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD_
 * QUERIES_FILE - queries log file
 * OUTPUT_FILE - output file with results
 * ES_HOST - Elasticsearch address
@@ -55,15 +55,15 @@ To run time and click using related searches calculation and get the result in E
 @java -jar -DuseElasticSearch=true TimeAndClickRelatedSearches.jar REDIS_HOST REDIS_PORT TIME_BETWEEN_QUERIES_IN_SECONDS SUGGESTION_THRESHOLD QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD QUERY_SIMILARITY_MORE_SIMILAR TEXT_SIMILARITY_BOOST TIME_AND_CLICK_BOOST SUGGEST_NON_ZERO_HITS_ONLY QUERIES_FILE ES_HOST ES_INDEX_NAME > /dev/null 2>&1@
 
 And the parameters are:
-* REDIS_HOST - Redis host, ie. `localhost`
-* REDIS_PORT - Redis port, ie. `6379`
-* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, ie. `20` 
-* SUGGESTION_THRESHOLD - suggestion threshold, ie. `0.2`
-* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, ie. `0.9`
-* QUERY_SIMILARITY_MORE_SIMILAR - boolean, set to `true` will result in suggesting similar queries according to the given `QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD`
-* TEXT_SIMILARITY_BOOST - boost related to text similarity, ie. `0.2`
-* TIME_AND_CLICK_BOOST - boost related to clicks, ie. `2.0`
-* SUGGEST_NON_ZERO_HITS_ONLY - boolean value, when set to `true` only non-zero hits queries will be suggested
+* REDIS_HOST - Redis host, ie. _localhost_
+* REDIS_PORT - Redis port, ie. _6379_
+* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, ie. _20_ 
+* SUGGESTION_THRESHOLD - suggestion threshold, ie. _0.2_
+* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, ie. _0.9_
+* QUERY_SIMILARITY_MORE_SIMILAR - boolean, set to _true_ will result in suggesting similar queries according to the given _QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD_
+* TEXT_SIMILARITY_BOOST - boost related to text similarity, ie. _0.2_
+* TIME_AND_CLICK_BOOST - boost related to clicks, ie. _2.0_
+* SUGGEST_NON_ZERO_HITS_ONLY - boolean value, when set to _true_ only non-zero hits queries will be suggested
 * QUERIES_FILE - queries log file
 * OUTPUT_FILE - output file with results
 * ES_HOST - Elasticsearch address
