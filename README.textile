@@ -1,8 +1,16 @@
 h1. Related Searches
 
-h2. Generate related search queries based on query log files
+Given a user query Related Searches returns a list of, you guessed it
+- related searches, much like related searches you see on Google
+search results pages.
 
-Related Searches is a tool dedicated to help with building related searches based on the users behavior stored in a query log files. 
+The related searches are derived from query logs structured like the
+infamous (AOL search data
+leak∂)([https://en.wikipedia.org/wiki/AOL_search_data_leak]. See
+sample further below.
+
+Relatedness is based on query similarity, as well as click data stored
+in the query logs.
 
 h2. Getting Started
 
@@ -22,7 +30,7 @@ h3. Running
 
 To run Related Searches you need to have Redis running. Once you build Related Searches you have two options:
 
-h4. Running basic related searches
+h4. Basic Related Searches
 
 The most basic related searches calculation, which doesn't take click count into consideration. To run it and generate file output one has to run the following command:
 
@@ -33,18 +41,18 @@ To run basic related searches calculation and get the result in Elasticsearch in
 @java -jar -DuseElasticSearch=true BasicRelatedSearches.jar REDIS_HOST REDIS_PORT TIME_BETWEEN_QUERIES_IN_SECONDS SUGGESTION_THRESHOLD QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD QUERY_SIMILARITY_MORE_SIMILAR QUERIES_FILE ES_HOST INDEX_NAME > /dev/null 2>&1@
 
 And the parameters are:
-* REDIS_HOST - Redis host, ie. _localhost_
-* REDIS_PORT - Redis port, ie. _6379_
-* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, ie. _20_
-* SUGGESTION_THRESHOLD - suggestion threshold, ie. _0.2_
-* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, ie. _0.9_
+* REDIS_HOST - Redis host, e.g., _localhost_
+* REDIS_PORT - Redis port, e.g., _6379_
+* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, e.g., _20_
+* SUGGESTION_THRESHOLD - suggestion threshold, e.g., _0.2_
+* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, e.g., _0.9_
 * QUERY_SIMILARITY_MORE_SIMILAR - boolean, set to _true_ will result in suggesting similar queries according to the given _QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD_
 * QUERIES_FILE - queries log file
 * OUTPUT_FILE - output file with results
 * ES_HOST - Elasticsearch address
 * INDEX_NAME - Elasticsearch index name
 
-h4. Running time and click based related searches
+h4. Time and Click-based Related Searches
 
 To run related searches calculation that takes into consideration time and click information from the query log and output the results to file, one has to run the following command:
 
@@ -55,21 +63,21 @@ To run time and click using related searches calculation and get the result in E
 @java -jar -DuseElasticSearch=true TimeAndClickRelatedSearches.jar REDIS_HOST REDIS_PORT TIME_BETWEEN_QUERIES_IN_SECONDS SUGGESTION_THRESHOLD QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD QUERY_SIMILARITY_MORE_SIMILAR TEXT_SIMILARITY_BOOST TIME_AND_CLICK_BOOST SUGGEST_NON_ZERO_HITS_ONLY QUERIES_FILE ES_HOST ES_INDEX_NAME > /dev/null 2>&1@
 
 And the parameters are:
-* REDIS_HOST - Redis host, ie. _localhost_
-* REDIS_PORT - Redis port, ie. _6379_
-* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, ie. _20_ 
-* SUGGESTION_THRESHOLD - suggestion threshold, ie. _0.2_
-* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, ie. _0.9_
+* REDIS_HOST - Redis host, e.g., _localhost_
+* REDIS_PORT - Redis port, e.g., _6379_
+* TIME_BETWEEN_QUERIES_IN_SECONDS - maximum time between queries in seconds, e.g., _20_ 
+* SUGGESTION_THRESHOLD - suggestion threshold, e.g., _0.2_
+* QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD - query similarity threshold, e.g., _0.9_
 * QUERY_SIMILARITY_MORE_SIMILAR - boolean, set to _true_ will result in suggesting similar queries according to the given _QUERY_SIMILARITY_ACCEPTANCE_THRESHOLD_
-* TEXT_SIMILARITY_BOOST - boost related to text similarity, ie. _0.2_
-* TIME_AND_CLICK_BOOST - boost related to clicks, ie. _2.0_
+* TEXT_SIMILARITY_BOOST - boost related to text similarity, e.g., _0.2_
+* TIME_AND_CLICK_BOOST - boost related to clicks, e.g., _2.0_
 * SUGGEST_NON_ZERO_HITS_ONLY - boolean value, when set to _true_ only non-zero hits queries will be suggested
 * QUERIES_FILE - queries log file
 * OUTPUT_FILE - output file with results
 * ES_HOST - Elasticsearch address
 * ES_INDEX_NAME - Elasticsearch index name
 
-h4. Query log format
+h4. Query Log Format
 
 Related Searches expects a given log format out of the box, the popular "AOL":https://en.wikipedia.org/wiki/AOL_search_data_leak log file format. Each query log line contained tabulate separated entries:
 * session identifier
