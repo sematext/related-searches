@@ -81,7 +81,7 @@ And the parameters are:
 
 #### Query Log Format
 
-Related Searches expects a given log format out of the box, the popular "AOL":https://en.wikipedia.org/wiki/AOL_search_data_leak log file format. Each query log line contained tabulate separated entries:
+Related Searches expects a given log format out of the box, the popular [AOL](https://en.wikipedia.org/wiki/AOL_search_data_leak) log file format. Each query log line contained tabulate separated entries:
 - session identifier
 - query 
 - query time
